@@ -1,5 +1,5 @@
 # $File: //member/autrijus/Locale-Hebrew/README $ $Author: autrijus $
-# $Revision: #1 $ $Change: 3546 $ $DateTime: 2003/01/14 21:08:10 $
+# $Revision: #2 $ $Change: 11166 $ $DateTime: 2004/09/17 21:16:27 $
 
 This is the README file for Locale::Hebrew, a module implementing
 bidirectional Hebrew support for Perl.

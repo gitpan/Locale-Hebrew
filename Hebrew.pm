@@ -1,5 +1,5 @@
 # $File: //member/autrijus/Locale-Hebrew/Hebrew.pm $ $Author: autrijus $
-# $Revision: #2 $ $Change: 3548 $ $DateTime: 2003/01/14 21:10:01 $
+# $Revision: #3 $ $Change: 11166 $ $DateTime: 2004/09/17 21:16:27 $
 
 package Locale::Hebrew;
 
@@ -13,17 +13,24 @@ Locale::Hebrew - Bidirectional Hebrew support
 =head1 SYNOPSIS
 
     use Locale::Hebrew;
-    $visual = Locale::Hebrew::hebrewflip($logical);
+    $visual = hebrewflip($logical);
 
 =head1 DESCRIPTION
 
-The new module is based on code from the Unicode Consortium.
+This module is based on code from the Unicode Consortium.
 
 The charset on their code was bogus, therefore this module had to work
 the real charset from scratch.  There might have some mistakes, though.
 
-No functions are exported by default, but you may explicitly import
-the C<hebrewflip> function.
+One function, C<hebrewflip>, is exported by default.
+
+=head1 NOTES
+
+The input string is assumed to be in C<iso-8859-8> encoding by default.
+
+On Perl version 5.8.1 and above, this module can handle Unicode strings
+by transparently encoding and decoding it as C<iso-8859-8>.  The return
+value should still be a Unicode string.
 
 =cut
 
@@ -32,16 +39,30 @@ use DynaLoader;
 use AutoLoader;
 
 @ISA = qw(Exporter DynaLoader);
-@EXPORT_OK = qw(hebrewflip);
-$VERSION = '1.02';
+@EXPORT = @EXPORT_OK = qw(hebrewflip);
+$VERSION = '1.03';
 
 __PACKAGE__->bootstrap($VERSION);
+
+sub hebrewflip ($) {
+    if ($] >= 5.008001 and utf8::is_utf8($_[0])) {
+        require Encode;
+        return Encode::decode(
+            'iso-8859-8',
+            _hebrewflip( Encode::encode('iso-8859-8', $_[0]) )
+        );
+    }
+    goto &_hebrewflip;
+}
 
 1;
 
 =head1 ACKNOWLEDGMENTS
 
 Lots of help from Raz Information Systems, L<http://www.raz.co.il/>.
+
+Thanks to Oded S. Resnik for suggesting Unicode support and exporting
+C<hebrewflip> by default.
 
 =head1 AUTHORS
 
@@ -54,7 +75,7 @@ Autrijus Tang E<lt>autrijus@autrijus.orgE<gt> is the current maintainer.
 
 Copyright 2001, 2002 by Ariel Brosh.
 
-Copyright 2003 by Autrijus Tang.
+Copyright 2003, 2004 by Autrijus Tang.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

@@ -1,5 +1,5 @@
 /* $File: //member/autrijus/Locale-Hebrew/Hebrew.xs $ $Author: autrijus $
-   $Revision: #1 $ $Change: 3539 $ $DateTime: 2003/01/14 20:55:43 $ */
+   $Revision: #2 $ $Change: 11166 $ $DateTime: 2004/09/17 21:16:27 $ */
 
 #ifdef __cplusplus
 extern "C" {
@@ -14,7 +14,7 @@ extern "C" {
 MODULE = Locale::Hebrew		PACKAGE = Locale::Hebrew		
 
 SV *
-hebrewflip(s)
+_hebrewflip(s)
 SV * s
 CODE:
     int l;

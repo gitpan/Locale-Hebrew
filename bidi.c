@@ -1,5 +1,5 @@
 /* $File: //member/autrijus/Locale-Hebrew/bidi.c $ $Author: autrijus $
-   $Revision: #2 $ $Change: 3547 $ $DateTime: 2003/01/14 21:08:16 $ */
+   $Revision: #3 $ $Change: 11166 $ $DateTime: 2004/09/17 21:16:27 $ */
 
 /* This code is slightly modified from:
         Bidi.cpp - version 24

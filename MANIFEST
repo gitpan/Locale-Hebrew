@@ -1,10 +1,12 @@
+bidi.c
 Changes
 Hebrew.pm
 Hebrew.xs
-MANIFEST
 Makefile.PL
+MANIFEST
 README
 SIGNATURE
-bidi.c
 t/0-signature.t
 t/1-basic.t
+t/2-utf8.t
+META.yml                                 Module meta-data (added by MakeMaker)
