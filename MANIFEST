@@ -4,6 +4,7 @@ Hebrew.pm
 Hebrew.xs
 Makefile.PL
 MANIFEST
+MANIFEST.SKIP
 README
 SIGNATURE
 t/0-signature.t

@@ -1,14 +1,28 @@
 # $File: //member/autrijus/Locale-Hebrew/Hebrew.pm $ $Author: autrijus $
-# $Revision: #3 $ $Change: 11166 $ $DateTime: 2004/09/17 21:16:27 $
+# $Revision: #4 $ $Change: 11169 $ $DateTime: 2004/09/18 09:21:22 $
 
 package Locale::Hebrew;
 
 use strict;
 use vars qw($VERSION @ISA @EXPORT @EXPORT_OK);
+use Exporter;
+use DynaLoader;
+use AutoLoader;
+
+@ISA = qw(Exporter DynaLoader);
+@EXPORT = @EXPORT_OK = qw(hebrewflip);
+$VERSION = '1.04';
+
+__PACKAGE__->bootstrap($VERSION);
 
 =head1 NAME
 
 Locale::Hebrew - Bidirectional Hebrew support
+
+=head1 VERSION
+
+This document describes version 1.04 of Locale::Hebrew, released
+September 18, 2004.
 
 =head1 SYNOPSIS
 
@@ -33,16 +47,6 @@ by transparently encoding and decoding it as C<iso-8859-8>.  The return
 value should still be a Unicode string.
 
 =cut
-
-use Exporter;
-use DynaLoader;
-use AutoLoader;
-
-@ISA = qw(Exporter DynaLoader);
-@EXPORT = @EXPORT_OK = qw(hebrewflip);
-$VERSION = '1.03';
-
-__PACKAGE__->bootstrap($VERSION);
 
 sub hebrewflip ($) {
     if ($] >= 5.008001 and utf8::is_utf8($_[0])) {

@@ -1,4 +1,13 @@
 ____________________________________________________________________________
+[ 11169] By: autrijus                              on 2004/09/18  09:21:22
+        Log: * This be 1.04.
+             * Add VERSION to POD; reorder things a bit; fix manifest.
+	   ! Hebrew.pm
+____________________________________________________________________________
+[ 11167] By: autrijus                              on 2004/09/17  21:19:15
+        Log: * Modernise Makefile.PL a bit. 
+	   ! Makefile.PL
+____________________________________________________________________________
 [ 11166] By: autrijus                              on 2004/09/17  21:16:27
         Log: * This be 1.03.
              * hebrewflip() is now exported by default.
