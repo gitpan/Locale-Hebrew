@@ -1,57 +1,72 @@
+# $File: //member/autrijus/Locale-Hebrew/Hebrew.pm $ $Author: autrijus $
+# $Revision: #2 $ $Change: 3548 $ $DateTime: 2003/01/14 21:10:01 $
+
 package Locale::Hebrew;
 
 use strict;
 use vars qw($VERSION @ISA @EXPORT @EXPORT_OK);
 
-require Exporter;
-require DynaLoader;
-require AutoLoader;
-
-@ISA = qw(Exporter DynaLoader);
-# Items to export into callers namespace by default. Note: do not export
-# names by default without a very good reason. Use EXPORT_OK instead.
-# Do not simply export all your public functions/methods/constants.
-@EXPORT_OK = qw(hebrewflip);
-$VERSION = '1.01';
-
-bootstrap Locale::Hebrew $VERSION;
-
-# Preloaded methods go here.
-
-# Autoload methods go after =cut, and are processed by the autosplit program.
-
-1;
-__END__
-
-#
-
 =head1 NAME
 
-Locale::Hebrew - BIDI support for Perl (Severly incomplete).
+Locale::Hebrew - Bidirectional Hebrew support
 
 =head1 SYNOPSIS
 
-use Locale::Hebrew;
-
-$visual = Locale::Hebrew::hebrewflip($logical);
+    use Locale::Hebrew;
+    $visual = Locale::Hebrew::hebrewflip($logical);
 
 =head1 DESCRIPTION
 
-The new module is based on code from Unicode.org.
-The charset on their code was bogus, therefore I had to work the real
-charset from scratch. I might have some mistakes, though.
+The new module is based on code from the Unicode Consortium.
 
-=head1 CREDITS
+The charset on their code was bogus, therefore this module had to work
+the real charset from scratch.  There might have some mistakes, though.
 
-Lots of help from Raz Information Systems, L<http://www.raz.co.il>
+No functions are exported by default, but you may explicitly import
+the C<hebrewflip> function.
+
+=cut
+
+use Exporter;
+use DynaLoader;
+use AutoLoader;
+
+@ISA = qw(Exporter DynaLoader);
+@EXPORT_OK = qw(hebrewflip);
+$VERSION = '1.02';
+
+__PACKAGE__->bootstrap($VERSION);
+
+1;
+
+=head1 ACKNOWLEDGMENTS
+
+Lots of help from Raz Information Systems, L<http://www.raz.co.il/>.
+
+=head1 AUTHORS
+
+Ariel Brosh E<lt>schop@cpan.orgE<gt> is the original author, now passed
+away.
+
+Autrijus Tang E<lt>autrijus@autrijus.orgE<gt> is the current maintainer.
 
 =head1 COPYRIGHT
 
-Usage and distribution free of charge. No support whatsoever or any
-liability is given.
+Copyright 2001, 2002 by Ariel Brosh.
 
-=head1 AUTHOR
+Copyright 2003 by Autrijus Tang.
 
-Ariel Brosh, L<schop@cpan.org>, L<ariel@raz.co.il>.
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+
+See L<http://www.perl.com/perl/misc/Artistic.html>
 
 =cut
+
+__END__
+# Local variables:
+# c-indentation-style: bsd
+# c-basic-offset: 4
+# indent-tabs-mode: nil
+# End:
+# vim: expandtab shiftwidth=4:

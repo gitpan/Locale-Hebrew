@@ -1,0 +1,18 @@
+____________________________________________________________________________
+[  3548] By: autrijus                              on 2003/01/14  21:10:01
+        Log: * This be 1.02.
+	   ! Hebrew.pm
+____________________________________________________________________________
+[  3547] By: autrijus                              on 2003/01/14  21:08:16
+        Log: * main() should be int not void.
+	   ! bidi.c
+____________________________________________________________________________
+[  3546] By: autrijus                              on 2003/01/14  21:08:10
+        Log: * adding README and tests.
+	   + README t/0-signature.t t/1-basic.t
+	   ! MANIFEST
+____________________________________________________________________________
+[  3544] By: autrijus                              on 2003/01/14  21:05:50
+        Log: * update manifest since Locale::Hebrew::Calendar is now
+             distributed separately.
+	   ! MANIFEST Makefile.PL

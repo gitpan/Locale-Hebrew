@@ -1,3 +1,6 @@
+# $File: //member/autrijus/Locale-Hebrew/t/1-basic.t $ $Author: autrijus $
+# $Revision: #1 $ $Change: 3546 $ $DateTime: 2003/01/14 21:08:10 $
+
 # Before `make install' is performed this script should be runnable with
 # `make test'. After `make install' it should work as `perl test.pl'
 
@@ -8,7 +11,7 @@
 
 BEGIN { $| = 1; print "1..1\n"; }
 END {print "not ok 1\n" unless $loaded;}
-use Locale::Hebrew::Calendar;
+use Locale::Hebrew;
 $loaded = 1;
 print "ok 1\n";
 

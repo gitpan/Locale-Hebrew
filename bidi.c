@@ -1,3 +1,6 @@
+/* $File: //member/autrijus/Locale-Hebrew/bidi.c $ $Author: autrijus $
+   $Revision: #2 $ $Change: 3547 $ $DateTime: 2003/01/14 21:08:16 $ */
+
 /* This code is slightly modified from:
         Bidi.cpp - version 24
         Reference implementation for Unicode Bidirectional Algorithm
@@ -40,43 +43,36 @@
          -------------------
 
          NOTE: The Unicode Birdirectional Algorithm removes all explicit
-                   formatting codes in rule X9, but states that this can be
-                   simulated by conformant implementations. This implementation
-                   attempts to demonstrate such a simulation
+               formatting codes in rule X9, but states that this can be
+               simulated by conformant implementations. This implementation
+               attempts to demonstrate such a simulation
 
-                   To demonstrate this, the current implementation does the
-                   following:
+               To demonstrate this, the current implementation does the
+               following:
 
-                        in resolveExplicit()
-                                - change LRE, LRO, RLE, RLO, PDF to BN
-                                - assign nested levels to BN
+		    in resolveExplicit()
+			    - change LRE, LRO, RLE, RLO, PDF to BN
+			    - assign nested levels to BN
 
-                        in resolveWeak and resolveNeutrals
-                                - assign L and R to BN's where they exist in pl
-ace of
-                                  sor and eor by changing the last BN in front 
-of a
-                                  level change to a strong type
-                                - skip over BN's for the purpose of determining
- actions
-                                - include BN in the count of deferred runs
-                                  which will resolve some of them to EN, AN and
- N
+		    in resolveWeak and resolveNeutrals
+			    - assign L and R to BN's where they exist in place of
+				sor and eor by changing the last BN in front of a
+				level change to a strong type
+			    - skip over BN's for the purpose of determining actions
+			    - include BN in the count of deferred runs
+				which will resolve some of them to EN, AN and N
 
-                        in resolveWhiteSpace
-                                - set the level of any surviving BN to the base
- level,
-                                  or the level of the preceding character
-                                - include LRE,LRO, RLE, RLO, PDF and BN in the 
-count
-                                  whitespace to be reset
+		    in resolveWhiteSpace
+			    - set the level of any surviving BN to the base level,
+				or the level of the preceding character
+			    - include LRE,LRO, RLE, RLO, PDF and BN in the count
+				whitespace to be reset
 
-                   This will result in the same order for non-BN characters as
-                   if the BN characters had been removed.
+		This will result in the same order for non-BN characters as
+		if the BN characters had been removed.
 
-                   The clean() function can be used to remove boundary marks fo
-r
-                   verification purposes.
+		The clean() function can be used to remove boundary marks for
+		verification purposes.
 
          Notation
          --------
@@ -1322,7 +1318,7 @@ void bidimain(char *string, int cch) {
         Reference implementation for Unicode Bidirectional Algorithm
 */
 
-void main(int argc, char **argv) {
+int main(int argc, char **argv) {
 	char s[8192];
 	if (argc != 2) exit(-1);
 
