@@ -1,0 +1,14 @@
+MANIFEST
+Hebrew.pm
+Hebrew.xs
+Makefile.PL
+Calendar/Calendar.pm
+Calendar/Calendar.xs
+Calendar/Changes
+Calendar/Makefile.PL
+Calendar/hcom.c
+Calendar/hdate.c
+Calendar/hdate.h
+Calendar/manifest
+Calendar/test.pl
+bidi.c
