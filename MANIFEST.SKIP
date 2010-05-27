@@ -7,3 +7,4 @@
 ^blibdirs$
 ^Hebrew.(?!pm$|xs$).*$
 ^bidi.(?!c$).*$
+^dll

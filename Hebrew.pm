@@ -1,8 +1,6 @@
-# $File: //member/autrijus/Locale-Hebrew/Hebrew.pm $ $Author: autrijus $
-# $Revision: #4 $ $Change: 11169 $ $DateTime: 2004/09/18 09:21:22 $
-
 package Locale::Hebrew;
 
+use 5.005;
 use strict;
 use vars qw($VERSION @ISA @EXPORT @EXPORT_OK);
 use Exporter;
@@ -11,7 +9,7 @@ use AutoLoader;
 
 @ISA = qw(Exporter DynaLoader);
 @EXPORT = @EXPORT_OK = qw(hebrewflip);
-$VERSION = '1.04';
+$VERSION = '1.05';
 
 __PACKAGE__->bootstrap($VERSION);
 
@@ -21,8 +19,8 @@ Locale::Hebrew - Bidirectional Hebrew support
 
 =head1 VERSION
 
-This document describes version 1.04 of Locale::Hebrew, released
-September 18, 2004.
+This document describes version 1.05 of Locale::Hebrew, released
+May 27, 2010.
 
 =head1 SYNOPSIS
 
@@ -45,6 +43,10 @@ The input string is assumed to be in C<iso-8859-8> encoding by default.
 On Perl version 5.8.1 and above, this module can handle Unicode strings
 by transparently encoding and decoding it as C<iso-8859-8>.  The return
 value should still be a Unicode string.
+
+=head1 SEE ALSO
+
+L<Text::Bidi>, which implements related algorithms based on the C<fribidi> library.
 
 =cut
 
@@ -70,16 +72,17 @@ C<hebrewflip> by default.
 
 =head1 AUTHORS
 
-Ariel Brosh E<lt>schop@cpan.orgE<gt> is the original author, now passed
-away.
+Audrey Tang E<lt>cpan@audreyt.orgE<gt>
+is the current maintainer.
 
-Autrijus Tang E<lt>autrijus@autrijus.orgE<gt> is the current maintainer.
+Ariel Brosh E<lt>schop@cpan.orgE<gt> 
+is the original author, now passed away.
 
 =head1 COPYRIGHT
 
 Copyright 2001, 2002 by Ariel Brosh.
 
-Copyright 2003, 2004 by Autrijus Tang.
+Copyright 2003-2010 by Audrey Tang.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
